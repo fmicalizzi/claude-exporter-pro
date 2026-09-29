@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Browse Claude Conversations</title>
+  <link rel="stylesheet" href="browse.css">
+</head>
+<body>
+  <div class="header">
+    <div class="header-top">
+      <h1>Claude Exporter Pro</h1>
+      <span class="org-badge" id="orgBadge">Detecting org...</span>
+    </div>
+    <div class="tabbar">
+      <button class="tab active" id="tabConversations" data-tab="conversations">Conversations</button>
+      <button class="tab" id="tabArtifacts" data-tab="artifacts">Artefactos</button>
+    </div>
+    <div class="controls" id="conversationsControls">
+      <div class="search-box" id="searchBox">
+        <input type="text" id="searchInput" placeholder="Search by name or summary...">
+        <button class="clear-btn" id="clearSearch">&#10005;</button>
+      </div>
+      <div class="filter-group">
+        <label>Project:
+          <select id="projectFilter">
+            <option value="">All</option>
+          </select>
+        </label>
+        <label>Model:
+          <select id="modelFilter">
+            <option value="">All</option>
+          </select>
+        </label>
+      </div>
+      <span class="stats" id="stats">Loading...</span>
+      <button class="btn-export-all" id="exportSelectedBtn" disabled>
+        Export Selected
+      </button>
+      <button class="btn-export-all" id="exportGroupedBtn" disabled style="background: var(--primary-hover);">
+        Export All Grouped by Project
+      </button>
+    </div>
+    <div class="controls" id="artifactsControls" style="display:none;">
+      <div class="search-box" id="artSearchBox">
+        <input type="text" id="artSearchInput" placeholder="Search artifacts...">
+        <button class="clear-btn" id="artClearSearch">&#10005;</button>
+      </div>
+      <span class="stats" id="artStats">Loading...</span>
+      <button class="btn-export-all" id="exportArtSelectedBtn" disabled>
+        Export Selected
+      </button>
+      <button class="btn-export-all" id="exportArtAllBtn" disabled style="background: var(--primary-hover);">
+        Export All Artifacts
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="table-wrap" id="conversationsView">
+      <div id="tableContent">
+        <div class="loading">
+          <div class="spinner"></div>
+          <div>Loading conversations...</div>
+        </div>
+      </div>
+    </div>
+    <div class="table-wrap" id="artifactsView" style="display:none;">
+      <div id="artTableContent">
+        <div class="loading">
+          <div class="spinner"></div>
+          <div>Loading artifacts...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="progress-modal" id="progressModal">
+    <div class="progress-box">
+      <h3>Exporting Conversations</h3>
+      <div id="progressText">Preparing export...</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div class="progress-stats" id="progressStats"></div>
+      <button class="btn-cancel" id="cancelExport">Cancel</button>
+    </div>
+  </div>
+
+  <script src="jszip.min.js"></script>
+  <script src="utils.js"></script>
+  <script src="browse.js"></script>
+</body>
+</html>

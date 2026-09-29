@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Playwright / debugging captures
+.playwright-mcp/
+*.log
+
+# Editor
+.vscode/
+.idea/
+
+# Exports de prueba
+*.zip

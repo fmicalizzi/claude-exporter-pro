@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Claude Exporter Pro</h1>
+    <span class="version" id="versionDisplay"></span>
+  </div>
+
+  <div class="org-status" id="orgStatus">
+    <span class="dot" id="orgDot"></span>
+    <span class="org-text" id="orgText">Detecting organization...</span>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Format</div>
+    <div class="options-row">
+      <label>
+        Chat:
+        <select id="format">
+          <option value="markdown">Markdown</option>
+          <option value="json">JSON</option>
+          <option value="text">Plain Text</option>
+        </select>
+      </label>
+    </div>
+    <div class="options-row">
+      <label><input type="checkbox" id="extractArtifacts" checked> Extract artifacts</label>
+      <label><input type="checkbox" id="branchOnly" checked> Active branch only</label>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Export</div>
+    <button class="btn btn-primary" id="exportCurrent" disabled>
+      Export Current Conversation
+    </button>
+    <button class="btn btn-primary" id="exportProject" disabled>
+      Export Current Project
+    </button>
+    <button class="btn btn-secondary" id="exportAll" disabled>
+      Export All (grouped by project)
+    </button>
+    <button class="btn btn-secondary" id="browseConversations">
+      Browse All Conversations
+    </button>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <div class="footer">
+    Claude Exporter Pro &mdash; Auto-detect, no config needed
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

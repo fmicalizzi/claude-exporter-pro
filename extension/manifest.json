@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Claude Exporter Pro",
+  "version": "1.1.0",
+  "description": "Export conversations and standalone artifacts from Claude.ai with auto-detection, project grouping, and bidirectional links",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["jszip.min.js", "utils.js", "content.js"]
+    },
+    {
+      "matches": ["https://*.frame.claudeusercontent.com/*"],
+      "js": ["frame_reader.js"],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["activeTab", "storage", "tabs", "scripting"],
+  "host_permissions": [
+    "https://claude.ai/*",
+    "https://*.frame.claudeusercontent.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["browse.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
