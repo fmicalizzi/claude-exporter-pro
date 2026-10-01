@@ -2,6 +2,18 @@
 
 Formato basado en Keep a Changelog.
 
+## [Unreleased]
+
+### Añadido
+
+- Documentación de repositorio para la publicación pública:
+  - `LICENSE` (MIT).
+  - `CONTRIBUTING.md`: entorno de desarrollo, flujo de contribución, pruebas manuales y pautas de código.
+  - `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1, traducción al español).
+  - `SECURITY.md`: proceso de reporte privado de vulnerabilidades.
+  - `.github/ISSUE_TEMPLATE/` (`bug_report.yml`, `feature_request.yml`, `config.yml`) y `.github/PULL_REQUEST_TEMPLATE.md`.
+  - README: badges, estructura actualizada y secciones de contribución, seguridad y licencia.
+
 ## [1.1.0] - 2026-09-10
 
 ### Añadido

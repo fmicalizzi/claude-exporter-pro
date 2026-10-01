@@ -1,0 +1,51 @@
+name: Feature request
+description: Proponer una mejora o funcionalidad nueva
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por la propuesta. Antes de continuar, buscá en los issues existentes por si ya fue propuesta.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: ¿Qué problema resuelve?
+      description: Describí la necesidad o la limitación actual.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solución propuesta
+      description: ¿Cómo te imaginás la funcionalidad?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas
+      description: Otras formas de resolverlo o workarounds que probaste.
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto adicional
+      description: Capturas, ejemplos, enlaces, etc.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmaciones
+      options:
+        - label: Busqué issues existentes y esta propuesta no está.
+          required: true
+        - label: No incluí org IDs, cookies, tokens ni exports reales.
+          required: true

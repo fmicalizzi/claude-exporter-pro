@@ -1,0 +1,101 @@
+name: Bug report
+description: Reportar un comportamiento inesperado de la extensión
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportar. Antes de continuar, buscá en los issues existentes por si ya está reportado.
+
+        > ⚠️ No incluyas org IDs, cookies, tokens ni exports reales. Ver [`SECURITY.md`](../blob/main/SECURITY.md).
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción del bug
+      description: ¿Qué pasó y qué estabas haciendo?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducirlo
+      placeholder: |
+        1. Ir a …
+        2. Clic en …
+        3. Ver el error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamiento esperado
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamiento actual
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área afectada
+      options:
+        - Popup
+        - "browse.html — Conversations"
+        - "browse.html — Artefactos"
+        - content.js (API de Claude)
+        - frame_reader.js (iframe de artefactos)
+        - Otro / no estoy seguro
+    validations:
+      required: true
+
+  - type: input
+    id: extension-version
+    attributes:
+      label: Versión de la extensión
+      description: Se ve en chrome://extensions o en extension/manifest.json
+      placeholder: "Ej: 1.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: chrome-version
+    attributes:
+      label: Versión de Chrome
+      placeholder: "Ej: 140.0.7339.80"
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Sistema operativo
+      placeholder: "Ej: macOS 15.6 / Windows 11 / Ubuntu 24.04"
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs o capturas
+      description: Consola de la extensión (chrome://extensions → Errores) y/o de la pestaña de Claude. Enmascarar cualquier dato sensible.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmaciones
+      options:
+        - label: Busqué issues existentes y este no está reportado.
+          required: true
+        - label: No incluí org IDs, cookies, tokens ni exports reales.
+          required: true

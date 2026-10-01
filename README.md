@@ -1,5 +1,9 @@
 # Claude Exporter Pro
 
+[![Licencia: MIT](https://img.shields.io/badge/Licencia-MIT-blue.svg)](LICENSE)
+[![Versión](https://img.shields.io/badge/versión-1.1.0-informational.svg)](CHANGELOG.md)
+[![Manifest V3](https://img.shields.io/badge/Chrome-Manifest%20V3-4285F4.svg)](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3)
+
 Extensión de Chrome (Manifest V3) para exportar **conversaciones** y **artefactos** de `claude.ai` a Markdown, JSON, texto plano y ZIP. Sin proceso de build ni dependencias: JavaScript plano que se carga directamente.
 
 ## Características
@@ -18,7 +22,14 @@ Extensión de Chrome (Manifest V3) para exportar **conversaciones** y **artefact
 ```text
 .
 ├── README.md
+├── LICENSE
 ├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── SECURITY.md
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   └── PULL_REQUEST_TEMPLATE.md
 ├── docs/
 │   └── ARCHITECTURE.md
 └── extension/            ← esto es lo que se carga en Chrome
@@ -91,6 +102,16 @@ Detalle técnico completo en [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 - `escapeHtml` no escapa comillas dobles (potencial en atributos de la tabla de browse); pendiente de endurecer.
 - Exportar un artefacto standalone suma una vista (`view_count`) y dispara la telemetría normal de Claude, igual que abrirlo a mano (es inherente al método iframe).
 
-## Notas
+## Contribuir
 
-- No se incluye archivo de licencia. Definí una antes de publicar (ej. MIT) según cómo quieras distribuirlo.
+¿Querés aportar? Mirá [`CONTRIBUTING.md`](CONTRIBUTING.md): entorno de desarrollo (sin build), pruebas manuales y pautas de código. Para reportar bugs o proponer features usá los [issue templates](https://github.com/fmicalizzi/claude-exporter-pro/issues/new/choose).
+
+Este proyecto sigue el [Código de Conducta Convenido para Contribuyentes](CODE_OF_CONDUCT.md).
+
+## Seguridad
+
+No abras issues públicos para vulnerabilidades: seguí [`SECURITY.md`](SECURITY.md) (reporte privado vía GitHub Security Advisories). La extensión maneja la sesión de `claude.ai`, así que nunca compartas org IDs, cookies ni tokens.
+
+## Licencia
+
+[MIT](LICENSE) © 2026 Franco Micalizzi.
